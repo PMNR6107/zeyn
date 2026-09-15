@@ -382,25 +382,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     const projY = centerY + (origY + driftY + currentTiltX * 40) * scale;
 
                     if (projX >= -10 && projX <= width + 10 && projY >= -10 && projY <= height + 10) {
-                        // Small, delicate dots
-                        const radius = Math.max(0.65, 1.28 * scale);
-                        let alpha = Math.min(0.28, Math.max(0.06, scale * 0.38));
+                        // Visible, crisp dots with good size
+                        const radius = Math.max(1.1, 2.0 * scale);
+                        let alpha = Math.min(0.65, Math.max(0.18, scale * 0.82));
 
-                        // Text protection: smoothly fade dots near hero headline & text for 100% legibility
+                        // Text protection: fade dots behind the headline text only
                         if (textBounds) {
                             const dx = (projX - textBounds.cx) / textBounds.rx;
                             const dy = (projY - textBounds.cy) / textBounds.ry;
                             const distSq = dx * dx + dy * dy;
                             if (distSq < 1.0) {
-                                alpha *= Math.max(0.02, Math.pow(distSq, 1.8) * 0.18);
+                                alpha *= Math.max(0.04, Math.pow(distSq, 1.4) * 0.28);
                             }
                         }
 
-                        if (alpha > 0.02) {
+                        if (alpha > 0.04) {
                             ctx.beginPath();
                             ctx.arc(projX, projY, radius, 0, Math.PI * 2);
-                            // Soft, elegant slate gray (not harsh black)
-                            ctx.fillStyle = `rgba(100, 116, 139, ${alpha.toFixed(3)})`;
+                            // Darker slate for strong visibility on light background
+                            ctx.fillStyle = `rgba(71, 85, 105, ${alpha.toFixed(3)})`;
                             ctx.fill();
                         }
                     }
