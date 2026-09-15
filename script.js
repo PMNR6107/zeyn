@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // -------------------------------------------------------------------------
     const copyEmailBtn = document.getElementById('copyEmailBtn');
     const copyBtnText = document.getElementById('copyBtnText');
-    const emailToCopy = 'zeyncompany@gmail.com';
+    const emailToCopy = 'manju.papasani@gmail.com';
 
     if (copyEmailBtn && copyBtnText) {
         copyEmailBtn.addEventListener('click', async () => {
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const subject = encodeURIComponent(`Project Inquiry: ${projectType} — ${name}`);
             const body = encodeURIComponent(plainBody);
-            const mailtoUri = `mailto:zeyncompany@gmail.com?subject=${subject}&body=${body}`;
+            const mailtoUri = `mailto:manju.papasani@gmail.com?subject=${subject}&body=${body}`;
 
             // 1. Attempt to launch the user's default email client
             window.location.href = mailtoUri;
@@ -183,10 +183,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span>Inquiry Prepared</span>
                     </div>
                     <p class="feedback-msg">
-                        Your email client has been launched with your inquiry addressed to <strong>zeyncompany@gmail.com</strong>.
+                        Your email client has been launched with your inquiry addressed to <strong>manju.papasani@gmail.com</strong>.
                     </p>
                     <div class="feedback-action-row">
                         <a href="${mailtoUri}" class="btn btn-primary btn-sm">Re-open Email App</a>
+                        <a href="https://wa.me/919281162822?text=${encodeURIComponent('Hi ZEYN Team,\n\nProject Inquiry from: ' + name + '\nService: ' + projectType + '\nEmail: ' + email + '\n\nDetails:\n' + message)}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="color: #15803d; border-color: #bbf7d0;">Chat on WhatsApp</a>
                         <button type="button" class="btn btn-secondary btn-sm" id="copyInquiryDetailsBtn">Copy Details</button>
                     </div>
                 `;
@@ -197,10 +198,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     copyInquiryBtn.addEventListener('click', async () => {
                         try {
                             if (navigator.clipboard && window.isSecureContext) {
-                                await navigator.clipboard.writeText(`To: zeyncompany@gmail.com\nSubject: Project Inquiry: ${projectType} — ${name}\n\n${plainBody}`);
+                                await navigator.clipboard.writeText(`To: manju.papasani@gmail.com\nSubject: Project Inquiry: ${projectType} — ${name}\n\n${plainBody}`);
                             } else {
                                 const ta = document.createElement('textarea');
-                                ta.value = `To: zeyncompany@gmail.com\nSubject: Project Inquiry: ${projectType} — ${name}\n\n${plainBody}`;
+                                ta.value = `To: manju.papasani@gmail.com\nSubject: Project Inquiry: ${projectType} — ${name}\n\n${plainBody}`;
                                 document.body.appendChild(ta);
                                 ta.select();
                                 document.execCommand('copy');
@@ -280,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // -------------------------------------------------------------------------
-    // 8. Hero 3D Floating Black Dots Particle Wave (Floating Perspective Mesh)
+    // 8. Hero Vertically Complete Floating Small Dots Wave (Soft Slate Theme)
     // -------------------------------------------------------------------------
     const dotsCanvas = document.getElementById('heroDotsCanvas');
 
@@ -290,16 +291,31 @@ document.addEventListener('DOMContentLoaded', () => {
         let height = 0;
         let animId = null;
 
-        const cols = 70;
-        const rows = 46;
-        const stepX = 35;
-        const stepZ = 45;
+        let cols = 68;
+        let rows = 46;
+        let stepX = 28;
+        let stepY = 22;
         const focalLength = 520;
 
         let mouseX = 0;
         let mouseY = 0;
         let currentTiltX = 0;
         let currentTiltY = 0;
+
+        let textBounds = null;
+        const updateTextBounds = () => {
+            const heroContent = document.querySelector('.hero-content');
+            if (heroContent && dotsCanvas) {
+                const cRect = heroContent.getBoundingClientRect();
+                const canvasRect = dotsCanvas.getBoundingClientRect();
+                textBounds = {
+                    cx: cRect.left - canvasRect.left + cRect.width * 0.45,
+                    cy: cRect.top - canvasRect.top + cRect.height * 0.5,
+                    rx: cRect.width * 0.60,
+                    ry: cRect.height * 0.58
+                };
+            }
+        };
 
         const resize = () => {
             const rect = dotsCanvas.parentElement.getBoundingClientRect();
@@ -309,6 +325,14 @@ document.addEventListener('DOMContentLoaded', () => {
             dotsCanvas.width = width * dpr;
             dotsCanvas.height = height * dpr;
             ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+            // Calculate grid counts to ensure complete vertical and horizontal coverage
+            cols = Math.min(76, Math.max(48, Math.round(width / 24)));
+            rows = Math.min(52, Math.max(36, Math.round(height / 18)));
+            stepX = (width * 1.32) / cols;
+            stepY = (height * 1.32) / rows;
+
+            updateTextBounds();
         };
 
         resize();
@@ -326,7 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let t = 0;
         const render = () => {
-            t += 0.015; // Smooth floating wave motion
+            t += 0.014; // Smooth, gentle floating wave motion
 
             // Smooth mouse tilt interpolation
             currentTiltX += (mouseY - currentTiltX) * 0.05;
@@ -335,39 +359,50 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.clearRect(0, 0, width, height);
 
             const centerX = width * 0.5;
-            const horizonY = height * 0.44;
+            const centerY = height * 0.5;
 
-            // Render 3D points from back to front for depth sorting
-            for (let j = rows - 1; j >= 0; j--) {
-                const z = (j + 1) * stepZ + 140;
+            // Vertically complete 3D floating field
+            for (let j = 0; j < rows; j++) {
+                const origY = (j - rows / 2) * stepY;
 
                 for (let i = 0; i < cols; i++) {
                     const origX = (i - cols / 2) * stepX;
 
-                    // Wave calculation + parabolic arch
-                    const arch = -Math.exp(-((origX / 680) ** 2)) * 125;
-                    const wave = Math.sin(origX * 0.0032 + t * 0.9) * Math.cos(z * 0.0028 + t * 0.7) * 58 +
-                                 Math.sin((origX + z) * 0.002 + t * 0.6) * 32;
-                    const y = wave + arch;
+                    // Multi-harmonic 3D wave undulation across both X and Y
+                    const waveZ = Math.sin(origX * 0.0032 + t * 0.85) * Math.cos(origY * 0.0038 + t * 0.7) * 80 +
+                                  Math.sin((origX + origY) * 0.0025 + t * 0.55) * 40;
+                    const z = 360 + waveZ;
 
-                    // 3D rotation with gentle mouse tilt
-                    const rotX = origX * Math.cos(currentTiltY) - z * Math.sin(currentTiltY);
-                    const rotZ = origX * Math.sin(currentTiltY) + z * Math.cos(currentTiltY);
+                    // Subtle vertical floating motion
+                    const driftY = Math.sin(origX * 0.002 + origY * 0.0015 + t * 0.6) * 12;
 
-                    // Perspective projection
-                    const scale = focalLength / (focalLength + rotZ);
-                    const projX = centerX + rotX * scale;
-                    const projY = horizonY + (y + 260 + rotZ * currentTiltX) * scale;
+                    // 3D perspective projection spanning complete vertical canvas
+                    const scale = focalLength / (focalLength + z);
+                    const projX = centerX + (origX + currentTiltY * 50) * scale;
+                    const projY = centerY + (origY + driftY + currentTiltX * 40) * scale;
 
-                    if (projX >= -20 && projX <= width + 20 && projY >= -20 && projY <= height + 20) {
-                        const radius = Math.max(0.75, 2.35 * scale);
-                        const alpha = Math.min(0.85, Math.max(0.08, scale * 1.25));
+                    if (projX >= -10 && projX <= width + 10 && projY >= -10 && projY <= height + 10) {
+                        // Small, delicate dots
+                        const radius = Math.max(0.65, 1.28 * scale);
+                        let alpha = Math.min(0.28, Math.max(0.06, scale * 0.38));
 
-                        ctx.beginPath();
-                        ctx.arc(projX, projY, radius, 0, Math.PI * 2);
-                        // Clean floating black dots on light background
-                        ctx.fillStyle = `rgba(18, 18, 24, ${alpha.toFixed(3)})`;
-                        ctx.fill();
+                        // Text protection: smoothly fade dots near hero headline & text for 100% legibility
+                        if (textBounds) {
+                            const dx = (projX - textBounds.cx) / textBounds.rx;
+                            const dy = (projY - textBounds.cy) / textBounds.ry;
+                            const distSq = dx * dx + dy * dy;
+                            if (distSq < 1.0) {
+                                alpha *= Math.max(0.02, Math.pow(distSq, 1.8) * 0.18);
+                            }
+                        }
+
+                        if (alpha > 0.02) {
+                            ctx.beginPath();
+                            ctx.arc(projX, projY, radius, 0, Math.PI * 2);
+                            // Soft, elegant slate gray (not harsh black)
+                            ctx.fillStyle = `rgba(100, 116, 139, ${alpha.toFixed(3)})`;
+                            ctx.fill();
+                        }
                     }
                 }
             }
@@ -381,6 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (document.hidden) {
                 cancelAnimationFrame(animId);
             } else {
+                updateTextBounds();
                 render();
             }
         });

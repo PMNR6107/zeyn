@@ -446,6 +446,25 @@ button {
 .mobile-nav-contact {
     font-size: 0.875rem;
     color: var(--text-tertiary);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.mobile-nav-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #15803d;
+    font-family: var(--font-mono);
+    margin-top: 4px;
+    transition: color var(--transition-fast);
+}
+
+.mobile-nav-whatsapp:hover {
+    color: #166534;
 }
 
 .mobile-nav-email {
@@ -514,7 +533,19 @@ button {
 }
 
 .hero-content {
+    position: relative;
+    z-index: 2;
     max-width: 660px;
+}
+
+.hero-content::before {
+    content: "";
+    position: absolute;
+    inset: -28px -32px;
+    background: radial-gradient(ellipse at 42% 48%, rgba(248, 248, 246, 0.92) 0%, rgba(248, 248, 246, 0.7) 60%, transparent 100%);
+    pointer-events: none;
+    z-index: -1;
+    border-radius: 24px;
 }
 
 .hero-headline {
@@ -1495,6 +1526,36 @@ button {
 .copy-btn svg {
     width: 13px;
     height: 13px;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #f0fdf4;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+    border-radius: var(--radius-sm);
+    padding: 10px 16px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    max-width: 400px;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.whatsapp-btn:hover {
+    background-color: #dcfce7;
+    border-color: #86efac;
+    color: #166534;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(22, 101, 52, 0.08);
+}
+
+.whatsapp-btn svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
 }
 
 .contact-form-panel {
