@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>ZEYN — Turning Ideas Into Digital Solutions</title>
+    <meta name="title" content="ZEYN — Turning Ideas Into Digital Solutions">
+    <meta name="description" content="ZEYN builds software, websites, applications and digital solutions for businesses and organizations.">
+    <meta name="keywords" content="ZEYN, custom software, web development, mobile applications, UI/UX design, business automation, digital solutions">
+    <meta name="author" content="ZEYN">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#121214">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zeyn.tech/">
+    <meta property="og:title" content="ZEYN — Turning Ideas Into Digital Solutions">
+    <meta property="og:description" content="ZEYN builds software, websites, applications and digital solutions for businesses and organizations.">
+    <meta property="og:site_name" content="ZEYN">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="ZEYN — Turning Ideas Into Digital Solutions">
+    <meta property="twitter:description" content="ZEYN builds software, websites, applications and digital solutions for businesses and organizations.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23121214'/><text x='16' y='22' font-family='sans-serif' font-size='18' font-weight='900' fill='white' text-anchor='middle'>Z</text></svg>">
+
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Subtle Minimalist Noise Texture Overlay -->
+    <div class="bg-noise" aria-hidden="true"></div>
+
+    <!-- 1. Header & Navigation -->
+    <header class="header" id="top">
+        <div class="container header-container">
+            <div class="logo-wrapper">
+                <a href="#top" class="brand-logo" aria-label="ZEYN Home">
+                    ZEYN<span class="logo-dot"></span>
+                </a>
+            </div>
+
+            <nav class="nav-desktop" aria-label="Main Navigation">
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#solutions" class="nav-link">Solutions</a>
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#about" class="nav-link">About</a>
+            </nav>
+
+            <div class="header-cta">
+                <a href="#contact" class="btn btn-primary">Start a Project</a>
+                <button class="menu-toggle" id="menuButton" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+                    <svg class="icon-bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                    <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobileDrawer" aria-label="Mobile Navigation" role="dialog" aria-modal="true">
+        <div class="mobile-nav-links">
+            <a href="#services" class="mobile-nav-link">Services</a>
+            <a href="#solutions" class="mobile-nav-link">Solutions</a>
+            <a href="#products" class="mobile-nav-link">Products</a>
+            <a href="#about" class="mobile-nav-link">About</a>
+            <a href="#contact" class="mobile-nav-link">Contact</a>
+        </div>
+        <div class="mobile-nav-bottom">
+            <a href="#contact" class="btn btn-primary" style="width: 100%;">Start a Project</a>
+            <div class="mobile-nav-contact">
+                <span>Inquiries:</span>
+                <div class="mobile-nav-email">zeyncompany@gmail.com</div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- 2. Hero Section -->
+        <section class="hero" id="hero">
+            <!-- 3D Floating Black Dots Particle Wave Canvas -->
+            <canvas id="heroDotsCanvas" class="hero-bg-canvas" aria-hidden="true"></canvas>
+
+            <div class="container hero-grid">
+                <div class="hero-content reveal-on-scroll">
+                    <span class="section-tag">Software & Digital Solutions</span>
+                    <h1 class="hero-headline">
+                        Turning ideas into
+                        <span class="highlight">digital solutions.</span>
+                    </h1>
+                    <p class="hero-desc">
+                        We design and build software, websites, applications and digital systems for businesses and organizations.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary">
+                            <span>Start a Project</span>
+                            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 8h10M9 4l4 4-4 4"/>
+                            </svg>
+                        </a>
+                        <a href="#services" class="btn btn-secondary">Explore Services</a>
+                    </div>
+                </div>
+
+                <!-- Abstract Software Interface Visual -->
+                <div class="hero-visual-wrapper" aria-hidden="true">
+                    <div class="float-tag top-right">
+                        <span class="tag-kicker">Capability Spec</span>
+                        <div class="tag-val">
+                            <span class="tag-accent-dot"></span>
+                            Production-Ready Systems
+                        </div>
+                    </div>
+
+                    <div class="system-canvas">
+                        <div class="canvas-header">
+                            <div class="canvas-controls">
+                                <div class="canvas-dot"></div>
+                                <div class="canvas-dot"></div>
+                                <div class="canvas-dot"></div>
+                            </div>
+                            <span class="canvas-title">zeyn // capability-system</span>
+                            <div class="canvas-status">
+                                <span class="status-pulse"></span>
+                                READY
+                            </div>
+                        </div>
+
+                        <div class="canvas-body">
+                            <div class="canvas-overview">
+                                <span class="overview-label">Engineered Competencies</span>
+                                <span class="overview-meta">System Architecture</span>
+                            </div>
+
+                            <div class="capabilities-matrix">
+                                <div class="capability-item">
+                                    <span class="cap-badge">SYS_01</span>
+                                    <div class="cap-name">Software</div>
+                                    <div class="cap-spec">Custom business workflows & backend systems</div>
+                                </div>
+                                <div class="capability-item">
+                                    <span class="cap-badge">SYS_02</span>
+                                    <div class="cap-name">Web</div>
+                                    <div class="cap-spec">High-performance websites & web platforms</div>
+                                </div>
+                                <div class="capability-item">
+                                    <span class="cap-badge">SYS_03</span>
+                                    <div class="cap-name">Apps</div>
+                                    <div class="cap-spec">Mobile applications for iOS & Android</div>
+                                </div>
+                                <div class="capability-item">
+                                    <span class="cap-badge">SYS_04</span>
+                                    <div class="cap-name">Design</div>
+                                    <div class="cap-spec">Intuitive user interfaces & design systems</div>
+                                </div>
+                            </div>
+
+                            <div class="system-metrics-bar">
+                                <div class="metric-pill">
+                                    <span>Methodology:</span>
+                                    <strong>Problem-First</strong>
+                                </div>
+                                <div class="metric-pill">
+                                    <span>Outcome:</span>
+                                    <strong>Custom Built</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="float-tag bottom-left">
+                        <span class="tag-kicker">Operational Focus</span>
+                        <div class="tag-val">
+                            <span class="tag-accent-dot" style="background-color: #10b981;"></span>
+                            Built For Real Workflows
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Company Statement Section -->
+        <section class="statement" aria-label="Company Statement">
+            <div class="container statement-content">
+                <blockquote class="statement-quote">
+                    "We don't just build software.
+                    <strong>We solve problems with technology."</strong>
+                </blockquote>
+                <p class="statement-sub">
+                    Technology should reduce friction, simplify operations, and open new possibilities. Everything we engineer is anchored in that purpose.
+                </p>
+            </div>
+        </section>
+
+        <!-- 4. Services Section (Extremely Obvious for Business Owners) -->
+        <section class="services" id="services">
+            <div class="container">
+                <div class="services-header">
+                    <span class="section-tag">Services</span>
+                    <h2 class="section-title">
+                        Technology built for your business.
+                    </h2>
+                    <p class="section-desc">
+                        From a business website to a complete digital platform, ZEYN develops solutions around your requirements.
+                    </p>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Service 01: Websites -->
+                    <article class="service-card reveal-on-scroll">
+                        <div class="service-card-top">
+                            <span class="service-index">01</span>
+                            <div class="service-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="service-card-content">
+                            <h3 class="service-title">Websites</h3>
+                            <p class="service-desc">
+                                Fast, modern websites designed to represent your business, establish credibility, and convert visitors into clients.
+                            </p>
+                        </div>
+                        <div class="service-card-footer">
+                            <span class="service-pill">Company Websites</span>
+                            <span class="service-pill">Landing Pages</span>
+                            <span class="service-pill">Brand Presentation</span>
+                        </div>
+                    </article>
+
+                    <!-- Service 02: Web Applications -->
+                    <article class="service-card reveal-on-scroll">
+                        <div class="service-card-top">
+                            <span class="service-index">02</span>
+                            <div class="service-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="service-card-content">
+                            <h3 class="service-title">Web Applications</h3>
+                            <p class="service-desc">
+                                Interactive web applications, customer portals, and internal tools built with secure, modern technology.
+                            </p>
+                        </div>
+                        <div class="service-card-footer">
+                            <span class="service-pill">Client Portals</span>
+                            <span class="service-pill">SaaS Platforms</span>
+                            <span class="service-pill">Management Systems</span>
+                        </div>
+                    </article>
+
+                    <!-- Service 03: Mobile Apps -->
+                    <article class="service-card reveal-on-scroll">
+                        <div class="service-card-top">
+                            <span class="service-index">03</span>
+                            <div class="service-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="service-card-content">
+                            <h3 class="service-title">Mobile Apps</h3>
+                            <p class="service-desc">
+                                Custom mobile applications for iOS and Android that turn your idea into an intuitive product for users.
+                            </p>
+                        </div>
+                        <div class="service-card-footer">
+                            <span class="service-pill">iOS & Android</span>
+                            <span class="service-pill">Product Development</span>
+                            <span class="service-pill">Intuitive UX</span>
+                        </div>
+                    </article>
+
+                    <!-- Service 04: Custom Software -->
+                    <article class="service-card reveal-on-scroll">
+                        <div class="service-card-top">
+                            <span class="service-index">04</span>
+                            <div class="service-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="service-card-content">
+                            <h3 class="service-title">Custom Software</h3>
+                            <p class="service-desc">
+                                Tailored business software designed around your specific workflows, operational requirements, and internal data.
+                            </p>
+                        </div>
+                        <div class="service-card-footer">
+                            <span class="service-pill">Workflow Systems</span>
+                            <span class="service-pill">Database Architecture</span>
+                            <span class="service-pill">Internal Operations</span>
+                        </div>
+                    </article>
+
+                    <!-- Service 05: UI/UX Design -->
+                    <article class="service-card reveal-on-scroll">
+                        <div class="service-card-top">
+                            <span class="service-index">05</span>
+                            <div class="service-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                                    <line x1="3" y1="9" x2="21" y2="9"></line>
+                                    <line x1="9" y1="21" x2="9" y2="9"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="service-card-content">
+                            <h3 class="service-title">UI/UX Design</h3>
+                            <p class="service-desc">
+                                Clean, intuitive user interfaces and product experiences designed around how real people use software.
+                            </p>
+                        </div>
+                        <div class="service-card-footer">
+                            <span class="service-pill">Interface Design</span>
+                            <span class="service-pill">User Flows</span>
+                            <span class="service-pill">Wireframes & Prototypes</span>
+                        </div>
+                    </article>
+
+                    <!-- Service 06: Business Automation -->
+                    <article class="service-card reveal-on-scroll">
+                        <div class="service-card-top">
+                            <span class="service-index">06</span>
+                            <div class="service-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="23 4 23 10 17 10"></polyline>
+                                    <polyline points="1 20 1 14 7 14"></polyline>
+                                    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="service-card-content">
+                            <h3 class="service-title">Business Automation</h3>
+                            <p class="service-desc">
+                                Automate repetitive daily tasks, connect your operational tools, and eliminate unnecessary manual work.
+                            </p>
+                        </div>
+                        <div class="service-card-footer">
+                            <span class="service-pill">Task Automation</span>
+                            <span class="service-pill">Tool Integrations</span>
+                            <span class="service-pill">Operational Efficiency</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Solutions / Approach Section (Dark Themed) -->
+        <section class="solutions" id="solutions">
+            <div class="container">
+                <div class="solutions-header">
+                    <span class="section-tag">Our Approach</span>
+                    <h2 class="section-title dark">
+                        Start with the problem.
+                        <span style="display: block; color: var(--dark-muted);">Build the solution.</span>
+                    </h2>
+                    <p class="section-desc dark">
+                        Every organization works differently. Instead of forcing businesses into generic software, ZEYN focuses on understanding the problem first and then building the right digital solution.
+                    </p>
+                </div>
+
+                <div class="process-wrapper">
+                    <div class="process-connecting-line" id="processConnectingLine" aria-hidden="true"></div>
+                    <div class="process-grid">
+                        <!-- Step 01 -->
+                        <div class="process-card reveal-on-scroll step-1">
+                            <div class="process-step-indicator">
+                                <span class="process-num">01 / STEP</span>
+                                <span class="process-dot"></span>
+                            </div>
+                            <div class="process-body">
+                                <h3 class="process-title">Understand</h3>
+                                <p class="process-desc">
+                                    Understand the business and its problem.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Step 02 -->
+                        <div class="process-card reveal-on-scroll step-2">
+                            <div class="process-step-indicator">
+                                <span class="process-num">02 / STEP</span>
+                                <span class="process-dot"></span>
+                            </div>
+                            <div class="process-body">
+                                <h3 class="process-title">Design</h3>
+                                <p class="process-desc">
+                                    Design the right experience and workflow.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Step 03 -->
+                        <div class="process-card reveal-on-scroll step-3">
+                            <div class="process-step-indicator">
+                                <span class="process-num">03 / STEP</span>
+                                <span class="process-dot"></span>
+                            </div>
+                            <div class="process-body">
+                                <h3 class="process-title">Build</h3>
+                                <p class="process-desc">
+                                    Develop and test the digital solution.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Step 04 -->
+                        <div class="process-card reveal-on-scroll step-4">
+                            <div class="process-step-indicator">
+                                <span class="process-num">04 / STEP</span>
+                                <span class="process-dot"></span>
+                            </div>
+                            <div class="process-body">
+                                <h3 class="process-title">Deliver</h3>
+                                <p class="process-desc">
+                                    Deploy and continuously improve.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-principle">
+                    <div class="principle-text">
+                        <strong>Requirements-Driven Engineering:</strong> Every line of code, architecture decision, and user interface is mapped directly to client operational needs.
+                    </div>
+                    <a href="#contact" class="btn btn-dark-secondary">Discuss Requirements</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Products Section -->
+        <section class="products" id="products">
+            <div class="container">
+                <div class="products-header">
+                    <span class="section-tag">Products</span>
+                    <h2 class="section-title">
+                        Solutions we've built.
+                    </h2>
+                    <p class="section-desc">
+                        Proprietary platforms engineered by ZEYN to solve complex operational challenges.
+                    </p>
+                </div>
+
+                <div class="products-list">
+                    <!-- Featured Product: ZEYN CAMPUS -->
+                    <article class="product-card reveal-on-scroll">
+                        <div class="product-info">
+                            <div>
+                                <!-- Clear Company/Product Relationship -->
+                                <div class="product-badge-row">
+                                    <span class="product-creator-badge">A Product by ZEYN</span>
+                                </div>
+                                <h3 class="product-title">ZEYN CAMPUS</h3>
+                                <p class="product-category-subtitle">Institutional campus management platform.</p>
+                                
+                                <p class="product-desc">
+                                    An institutional campus management platform designed to connect students, faculty and administrators through one unified ecosystem.
+                                </p>
+
+                                <div class="capabilities-section-title">Core Capabilities</div>
+                                <div class="product-capabilities">
+                                    <div class="capability-chip">
+                                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
+                                            <path d="M3 8.5l3.5 3.5 6.5-7"/>
+                                        </svg>
+                                        <span>Attendance</span>
+                                    </div>
+                                    <div class="capability-chip">
+                                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
+                                            <path d="M3 8.5l3.5 3.5 6.5-7"/>
+                                        </svg>
+                                        <span>Assignments</span>
+                                    </div>
+                                    <div class="capability-chip">
+                                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
+                                            <path d="M3 8.5l3.5 3.5 6.5-7"/>
+                                        </svg>
+                                        <span>Submissions</span>
+                                    </div>
+                                    <div class="capability-chip">
+                                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
+                                            <path d="M3 8.5l3.5 3.5 6.5-7"/>
+                                        </svg>
+                                        <span>Evaluation</span>
+                                    </div>
+                                    <div class="capability-chip">
+                                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
+                                            <path d="M3 8.5l3.5 3.5 6.5-7"/>
+                                        </svg>
+                                        <span>Notifications</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-actions">
+                                <button type="button" class="btn btn-primary" id="openCampusModalBtn" aria-haspopup="dialog">
+                                    <span>Explore ZEYN CAMPUS</span>
+                                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 8h10M9 4l4 4-4 4"/>
+                                    </svg>
+                                </button>
+                                <a href="../ZEYN%20CAMPUS/ad-studio.html" target="_blank" class="btn btn-secondary" style="display:inline-flex; align-items:center; gap:0.5rem; text-decoration:none;">
+                                    <span>🎬 Watch Video Ad</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- System Architecture Preview (Grounded, No Fake Usage Numbers) -->
+                        <div class="product-preview-container" aria-hidden="true">
+                            <div class="campus-dashboard-mockup">
+                                <div class="mockup-topbar">
+                                    <div class="mockup-brand">
+                                        <span>ZEYN CAMPUS</span>
+                                        <span class="mockup-badge">Institutional Suite</span>
+                                    </div>
+                                    <div class="mockup-actions">
+                                        <span class="mockup-user-chip">Portal: Admin · Faculty · Student</span>
+                                    </div>
+                                </div>
+                                <div class="mockup-content">
+                                    <div class="mockup-stats-row">
+                                        <div class="mockup-stat">
+                                            <span class="label">Architecture</span>
+                                            <span class="val">Unified System</span>
+                                        </div>
+                                        <div class="mockup-stat">
+                                            <span class="label">Target</span>
+                                            <span class="val">Colleges & Orgs</span>
+                                        </div>
+                                        <div class="mockup-stat">
+                                            <span class="label">Access</span>
+                                            <span class="val">Role-Based</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="mockup-modules-card">
+                                        <div class="mockup-module-heading">
+                                            <span>Integrated Campus Modules</span>
+                                            <span style="font-family: var(--font-mono); font-size: 0.6875rem; color: #10b981;">Active Ecosystem</span>
+                                        </div>
+                                        <div class="mockup-feed-list">
+                                            <div class="mockup-feed-item">
+                                                <span class="feed-title">Attendance Management</span>
+                                                <span class="feed-status">Core Module</span>
+                                            </div>
+                                            <div class="mockup-feed-item">
+                                                <span class="feed-title">Assignment & Submissions</span>
+                                                <span class="feed-status">Core Module</span>
+                                            </div>
+                                            <div class="mockup-feed-item">
+                                                <span class="feed-title">Academic Evaluation</span>
+                                                <span class="feed-status">Core Module</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Extensibility Architecture Slot for Future Products -->
+                    <div class="future-product-slot">
+                        <div class="future-product-text">
+                            <h4>Expanding Product Portfolio</h4>
+                            <p>Additional domain-specific digital platforms and business utilities are currently under active development.</p>
+                        </div>
+                        <span class="future-tag">IN DEVELOPMENT</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. About ZEYN Section -->
+        <section class="about" id="about">
+            <div class="container about-grid">
+                <div class="about-lead">
+                    <span class="section-tag">About ZEYN</span>
+                    <h2 class="section-title">
+                        We build technology around real problems.
+                    </h2>
+                </div>
+
+                <div class="about-content">
+                    <p class="about-paragraph highlight">
+                        ZEYN is a software and digital solutions company focused on helping businesses and organizations turn ideas, challenges and manual processes into practical technology.
+                    </p>
+                    <p class="about-paragraph">
+                        We create everything from websites and mobile applications to custom business software and complete digital platforms.
+                    </p>
+
+                    <div class="about-pillars">
+                        <div class="pillar-item">
+                            <h4>Client-Centric Engineering</h4>
+                            <p>Every solution is built around authentic operational requirements rather than rigid pre-packaged software.</p>
+                        </div>
+                        <div class="pillar-item">
+                            <h4>Modern Architecture</h4>
+                            <p>Clean, reliable, scalable codebases engineered for longevity and seamless performance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="contact-card">
+                    <div class="contact-info">
+                        <span class="section-tag">Get in Touch</span>
+                        <h2 class="section-title">
+                            Have an idea?<br>
+                            <span class="text-muted">Let's build it.</span>
+                        </h2>
+                        <p class="section-desc">
+                            Tell us what you're trying to build or the problem you're trying to solve.
+                        </p>
+
+                        <div class="contact-actions">
+                            <a href="mailto:zeyncompany@gmail.com?subject=Project%20Inquiry%20%E2%80%94%20ZEYN&body=Hi%20ZEYN%20Team%2C%0A%0AI'd%20like%20to%20discuss%20a%20project%20with%20you.%0A%0AOrganization%3A%0AProject%20Type%3A%0ABrief%20Overview%3A" class="btn btn-primary" id="primaryContactBtn">
+                                <span>Start a Conversation</span>
+                                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 8h10M9 4l4 4-4 4"/>
+                                </svg>
+                            </a>
+
+                            <div class="email-box">
+                                <span class="email-address" id="contactEmail">zeyncompany@gmail.com</span>
+                                <button type="button" class="copy-btn" id="copyEmailBtn" aria-label="Copy email address to clipboard">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span id="copyBtnText">Copy</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Clean Functional Inquiry Form Interface -->
+                    <div class="contact-form-panel">
+                        <h3 class="form-title">Send a Project Inquiry</h3>
+                        <p class="form-subtitle">Direct message to our engineering team.</p>
+                        
+                        <form id="projectInquiryForm">
+                            <div class="form-group">
+                                <label for="clientName" class="form-label">Your Name</label>
+                                <input type="text" id="clientName" class="form-input" placeholder="e.g. Alex Morgan" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="clientEmail" class="form-label">Your Email</label>
+                                <input type="email" id="clientEmail" class="form-input" placeholder="name@organization.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="projectType" class="form-label">Primary Service Needed</label>
+                                <select id="projectType" class="form-select">
+                                    <option value="Websites">Websites</option>
+                                    <option value="Web Applications">Web Applications</option>
+                                    <option value="Mobile Apps">Mobile Apps</option>
+                                    <option value="Custom Software">Custom Software</option>
+                                    <option value="UI/UX Design">UI/UX Design</option>
+                                    <option value="Business Automation">Business Automation</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="projectMessage" class="form-label">Tell us about your project or problem</label>
+                                <textarea id="projectMessage" class="form-textarea" placeholder="Describe what you want to build or the business problem you're trying to solve..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary form-submit-btn" id="submitInquiryBtn">
+                                <span>Send Inquiry</span>
+                                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 8h10M9 4l4 4-4 4"/>
+                                </svg>
+                            </button>
+
+                            <!-- In-Form Confirmation Feedback Container -->
+                            <div id="formFeedbackNotice" class="form-feedback-box" style="display: none;"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 9. Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#top" class="brand-logo" aria-label="ZEYN Home">
+                        ZEYN<span class="logo-dot"></span>
+                    </a>
+                    <p class="footer-tagline">
+                        Turning ideas into digital solutions.
+                    </p>
+                    <p class="footer-discipline">
+                        Software · Design · Digital Solutions
+                    </p>
+                </div>
+
+                <div class="footer-nav-columns">
+                    <div class="footer-nav-group">
+                        <h4>Navigation</h4>
+                        <div class="footer-links">
+                            <a href="#services" class="footer-link">Services</a>
+                            <a href="#solutions" class="footer-link">Solutions</a>
+                            <a href="#products" class="footer-link">Products</a>
+                            <a href="#about" class="footer-link">About</a>
+                            <a href="#contact" class="footer-link">Contact</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-nav-group">
+                        <h4>Inquiries</h4>
+                        <div class="footer-links">
+                            <a href="mailto:zeyncompany@gmail.com" class="footer-link">zeyncompany@gmail.com</a>
+                            <span class="footer-link" style="color: #6a6a75;">Direct Project Discussions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">
+                    © 2026 ZEYN. All rights reserved.
+                </p>
+                <a href="#top" class="back-to-top" aria-label="Back to top of page">
+                    <span>Back to top</span>
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M8 13V3M4 7l4-4 4 4"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ZEYN CAMPUS Product Modal -->
+    <div class="modal-overlay" id="campusModal" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
+        <div class="modal-card">
+            <div class="modal-header">
+                <div>
+                    <span class="product-creator-badge" style="margin-bottom: 6px;">A Product by ZEYN</span>
+                    <h4 class="service-title" id="modalProductTitle" style="margin-bottom: 2px;">ZEYN CAMPUS</h4>
+                    <p style="font-size: 0.8125rem; color: var(--text-tertiary);">Institutional campus management platform.</p>
+                </div>
+                <button type="button" class="modal-close-btn" id="closeCampusModalBtn" aria-label="Close details">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="section-desc" style="margin-top: 0; font-size: 0.9375rem;">
+                    An institutional campus management platform designed to connect students, faculty and administrators through one unified ecosystem.
+                </p>
+
+                <div class="modal-modules-grid">
+                    <div class="modal-module-item">
+                        <h5>Attendance Tracking</h5>
+                        <p>Streamlined attendance logs with discrepancy alerts and institutional reporting.</p>
+                    </div>
+                    <div class="modal-module-item">
+                        <h5>Course Assignments</h5>
+                        <p>Centralized distribution of coursework deadlines, guidelines, and resource materials.</p>
+                    </div>
+                    <div class="modal-module-item">
+                        <h5>Digital Submissions</h5>
+                        <p>Time-stamped student submissions with format verification and submission audit trails.</p>
+                    </div>
+                    <div class="modal-module-item">
+                        <h5>Academic Evaluation</h5>
+                        <p>Rubric-based assessment grading matrices with direct student performance feedback.</p>
+                    </div>
+                    <div class="modal-module-item" style="grid-column: 1 / -1;">
+                        <h5>Campus-Wide Notifications</h5>
+                        <p>Priority-driven alerts broadcast to cohorts, faculty departments, or administrative staff.</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 12px; justify-content: flex-end; margin-top: 24px;">
+                    <a href="mailto:zeyncompany@gmail.com?subject=Inquiry%20regarding%20ZEYN%20CAMPUS" class="btn btn-primary">Inquire About ZEYN CAMPUS</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
